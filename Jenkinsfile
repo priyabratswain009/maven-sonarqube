@@ -3,7 +3,7 @@ node() {
   stage ('Checkout')
   {
     cleanWs();
-  git credentialsId: 'Jenkin-git_inte', url: 'https://github.com/Kamthekirtee/maven-sonarqube.git'
+  git credentialsId: 'Kirtee-github-private-key', url: 'https://github.com/Kamthekirtee/maven-sonarqube.git'
   }
  
   stage ('Build')
