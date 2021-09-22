@@ -1,5 +1,7 @@
 node() {
 
+  tool name: 'maven', type: 'maven'
+  
   stage ('Checkout')
   {
     cleanWs();
