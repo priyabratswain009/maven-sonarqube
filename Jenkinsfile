@@ -10,7 +10,9 @@ node() {
  
   stage ('Build')
   {
-  sh 'mvn clean package'
+    withSonarQubeEnv(installationName: 'sonar'){
+            sh 'mvn clean package' 
+           }
   }
 
 }
