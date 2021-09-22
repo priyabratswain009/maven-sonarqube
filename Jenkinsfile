@@ -13,6 +13,24 @@ node() {
     withSonarQubeEnv(installationName: 'sonar'){
             sh 'mvn clean package' 
            }
-  }
+          }
+  
+   try{
+            stage("SonarQube Quality Gate") { 
+                timeout(time: 1, unit: 'HOURS') { 
+                def qg = waitForQualityGate() 
+                if (qg.status != 'OK') {
+                        echo "Quality Gate Failed"
+
+                    }
+                }
+            }
+            env.sonarqube_result = "PASS"
+        }
+  catch(Exception e){
+            env.sonarqube_result = "FAIL"
+            currentBuild.result = "FAILURE"
+        }
+  
 
 }
