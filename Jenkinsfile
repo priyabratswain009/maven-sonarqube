@@ -12,6 +12,7 @@ node() {
   {
     withSonarQubeEnv(installationName: 'sonar'){
             sh 'mvn clean package' 
+            sh 'mvn clean verify sonar:sonar'
            }
           }
   
