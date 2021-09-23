@@ -5,14 +5,15 @@ node() {
   stage ('Checkout')
   {
     cleanWs();
-  git credentialsId: 'Kirtee-github-private-key', url: 'https://github.com/Kamthekirtee/maven-sonarqube.git'
+  git credentialsId: 'Kirtee-github-private-ke', url: 'https://github.com/Kamthekirtee/maven-sonarqube.git'
   }
  
   stage ('Build')
   {
     withSonarQubeEnv(installationName: 'sonar'){
+           
+            sh 'mvn clean verify sonar:sonar'
             sh 'mvn clean package' 
-            //sh 'mvn clean verify sonar:sonar'
            }
           }
   
