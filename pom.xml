@@ -40,9 +40,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <profiles>
-        <profile>
             <id>sonar</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -53,8 +50,6 @@
                     http://3.145.53.68:9000
                 </sonar.host.url>
             </properties>
-        </profile>
-        <profile>
             <id>coverage</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -81,7 +76,5 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-    </profiles>
 
 </project>
