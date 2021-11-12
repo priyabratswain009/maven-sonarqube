@@ -30,7 +30,7 @@
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.6.0.1398</version>
+                    <version>4.6.2.2472</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -50,7 +50,7 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                    http://localhost:9000
+                    http://3.145.53.68:9000
                 </sonar.host.url>
             </properties>
         </profile>
